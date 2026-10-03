@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ytchapters — automatic chapter lists for YouTube live streams</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { margin: 0 auto; max-width: 44rem; padding: 3rem 1.25rem 5rem;
+           font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    h1 { font-size: 1.6rem; margin-bottom: .25rem; }
+    p.lead { opacity: .75; margin-top: 0; }
+    code { background: rgba(127,127,127,.15); padding: .1rem .35rem; border-radius: 4px; }
+    footer { margin-top: 3rem; opacity: .6; font-size: .9rem; }
+  </style>
+</head>
+<body>
+  <h1>ytchapters</h1>
+  <p class="lead">Automatic timestamped chapter lists for YouTube live streams.</p>
+
+  <p>
+    ytchapters is a self-hosted tool operated by a single channel owner. It watches one
+    YouTube channel for new live broadcasts, waits until YouTube's auto-generated
+    captions for that broadcast become available, compresses the transcript into a
+    time-blocked summary, and uses a language model to pick the points where the topic
+    changes. The resulting list of chapters is posted as a comment under the same video,
+    on behalf of the channel owner who authorised the tool.
+  </p>
+
+  <h2>How it is used</h2>
+  <p>
+    The tool acts only on the authorising account's own videos. It reads publicly
+    available video pages and caption tracks, and writes a single comment per broadcast
+    through the YouTube Data API v3 (<code>commentThreads.insert</code>). It posts
+    nothing else, edits nothing, and uploads nothing.
+  </p>
+
+  <h2>Privacy</h2>
+  <p>
+    No personal data is collected, stored, or shared with third parties.
+    See the <a href="privacy.html">privacy policy</a>.
+  </p>
+
+  <footer>
+    Contact: leosaiassistant@gmail.com
+  </footer>
+</body>
+</html>
